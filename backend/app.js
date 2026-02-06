@@ -84,9 +84,9 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/tasks", taskRouter);
 
 
-app.listen(port, () => {
-    console.log(`Server running on port http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`Server running on port http://localhost:${port}`)
+// })
 
 
 module.exports = app;
