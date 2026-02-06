@@ -8,10 +8,7 @@ const taskRouter = require('./routes/taskRoutes');
 
 const app = express()
 
-
 connectDB()
-
-
 
 app.use(express.json())
 app.use(helmet())
@@ -23,8 +20,6 @@ app.use(cors(
 
 ))
 
-
-
 const port = process.env.PORT || 5000
 
 
@@ -35,7 +30,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/tasks", taskRouter)
-
 
 
 app.listen(port, () => {
