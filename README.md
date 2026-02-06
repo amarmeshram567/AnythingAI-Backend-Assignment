@@ -37,15 +37,15 @@
 - npm install
 
 ### start backend server 
-npm run dev or node app.js
+- npm run dev or node app.js
 
 backend on port - http://localhost:5000
 
 
 ## Frontend Setup 
-cd frontend 
-npm install 
-npm run dev
+- cd frontend 
+- npm install 
+- npm run dev
 
 frontend on port http://localhost:5173
 
