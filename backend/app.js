@@ -1,49 +1,85 @@
-require('dotenv').config()
-const express = require("express")
-const cors = require("cors")
+// require('dotenv').config()
+// const express = require("express")
+// const cors = require("cors")
+// const connectDB = require("./config/db");
+// const helmet = require('helmet');
+// const authRouter = require('./routes/authRoutes');
+// const taskRouter = require('./routes/taskRoutes');
+
+// const app = express()
+
+
+// connectDB()
+
+// const allowedOrigins = [
+//     'http://localhost:5173'
+// ]
+
+// app.use(express.json())
+// app.use(cors(
+//     {
+//         origin: allowedOrigins,
+//         credentials: true
+//     }
+
+// ))
+// app.use(helmet())
+
+
+// const port = process.env.PORT || 5000
+
+
+// app.get("/", (req, res) => {
+//     res.send("Server Running")
+// })
+
+
+// app.use("/api/v1/auth", authRouter);
+// app.use("/api/v1/tasks", taskRouter)
+
+
+
+// app.listen(port, () => {
+//     console.log(`Server running on port http://localhost:${port}`)
+// })
+
+
+
+// module.exports = app
+
+
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+
 const connectDB = require("./config/db");
-const helmet = require('helmet');
-const authRouter = require('./routes/authRoutes');
-const taskRouter = require('./routes/taskRoutes');
+const authRouter = require("./routes/authRoutes");
+const taskRouter = require("./routes/taskRoutes");
 
-const app = express()
+const app = express();
+
+connectDB();
 
 
-connectDB()
+app.use(express.json());
+app.use(helmet());
 
-const allowedOrigins = [
-    'http://localhost:5173'
-]
-
-app.use(express.json())
-app.use(cors(
-    {
-        origin: allowedOrigins,
+app.use(
+    cors({
+        origin: "*",
         credentials: true
-    }
+    })
+);
 
-))
-app.use(helmet())
-
-
-const port = process.env.PORT || 5000
-
-
+// 
 app.get("/", (req, res) => {
-    res.send("Server Running")
-})
+    res.send("Server Running");
+});
 
 
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/tasks", taskRouter)
+app.use("/api/v1/tasks", taskRouter);
 
 
-
-app.listen(port, () => {
-    console.log(`Server running on port http://localhost:${port}`)
-})
-
-
-
-module.exports = app
-
+module.exports = app;
