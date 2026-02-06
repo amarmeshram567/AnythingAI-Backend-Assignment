@@ -29,6 +29,11 @@ app.use(helmet())
 const port = process.env.PORT || 5000
 
 
+app.get("/", (req, res) => {
+    res.send("Server Running")
+})
+
+
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/tasks", taskRouter)
 
