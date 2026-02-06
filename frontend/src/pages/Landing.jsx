@@ -72,6 +72,7 @@ const Landing = () => {
                 </div>
             </section>
 
+            {/* Features */}
             <section className="py-20  bg-white">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-12">
@@ -98,7 +99,7 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/* ================= TESTIMONIALS ================= */}
+            {/* Testimonial */}
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
@@ -125,7 +126,7 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/* ================= FOOTER ================= */}
+            {/* Footer */}
             <footer className="bg-white border-t border-gray-200 py-6">
                 <div className="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
                     © {new Date().getFullYear()} TaskFlow. All rights reserved.
