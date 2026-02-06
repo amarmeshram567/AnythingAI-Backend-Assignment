@@ -83,9 +83,10 @@ const Dashboard = () => {
 
             {/* Task list */}
             {isLoading ? (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-100/70 z-50">
-                    <Loader2 className="h-10 w-10 animate-spin text-gray-600" />
+                <div className="min-h-[calc(50vh-64px)] flex items-center justify-center">
+                    <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
                 </div>
+
             ) : tasks.length === 0 ? (
                 <p className="text-center text-gray-500 mt-10">No tasks found</p>
             ) : (
