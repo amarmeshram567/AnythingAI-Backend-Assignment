@@ -59,6 +59,8 @@ const taskRouter = require("./routes/taskRoutes");
 
 const app = express();
 
+const port = process.env.PORT || 5000
+
 connectDB();
 
 
@@ -80,6 +82,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/tasks", taskRouter);
+
+
+app.listen(port, () => {
+    console.log(`Server running on port http://localhost:${port}`)
+})
 
 
 module.exports = app;
